@@ -1,0 +1,23 @@
+{
+  "name": "game-dialog-script",
+  "version": "1.0.0",
+  "description": "A grammar and js parser for a game dialog scripting language.",
+  "main": "dist/gds-parser.js",
+  "scripts": {
+    "build": "pegjs -o dist/gds-parser.js game-dialog-script.pegjs"
+  },
+  "keywords": [
+    "peg",
+    "pegjs",
+    "game",
+    "dialog",
+    "scripting",
+    "language",
+    "script"
+  ],
+  "author": "Jorge Ramirez",
+  "license": "ISC",
+  "devDependencies": {
+    "pegjs": "^0.10.0"
+  }
+}
