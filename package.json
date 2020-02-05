@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A grammar and js parser for a game dialog scripting language.",
   "main": "dist/gds-parser.js",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "scripts": {
     "build": "pegjs -o dist/gds-parser.js game-dialog-script.pegjs"
   },
