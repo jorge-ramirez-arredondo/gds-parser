@@ -1,9 +1,9 @@
 // # Command Definition Section
 
 CmdNode "command node"
-  = cmd:(IfCmdBlock / EachCmdBlock) {
+  = cmd:(PauseCmd / IfCmdBlock / EachCmdBlock) {
     return {
-      type: "command",
+      type: "Command",
       ...cmd
     };
   }

@@ -3,12 +3,17 @@
 IfCmdBlock "if command block"
   = ifCmd:IfCmd ifBlock:IfNode* elseChain:ElseBlockLink* EndIfCmd {
     const chain = [
-      { condition: ifCmd.param, block: ifBlock },
+      {
+        type: "Command",
+        cmdType: "IfChainLink",
+        condition: ifCmd.param,
+        block: ifBlock
+      },
       ...elseChain
     ];
 
     return {
-      cmdType: "ifBlock",
+      cmdType: "IfBlock",
       chain
     };
   }
@@ -16,6 +21,8 @@ IfCmdBlock "if command block"
 ElseBlockLink "else block link"
   = elseCmd:ElseCmd block:IfNode* {
     return {
+      type: "Command",
+      cmdType: "IfChainLink",
       condition: elseCmd.param,
       block
     };
@@ -27,7 +34,7 @@ IfNode "if node"
 IfCmd "if command"
   = CmdOpen "if" param:CmdParam CmdClose {
     return {
-      cmdType: "if",
+      cmdType: "If",
       param
     };
   }
@@ -35,12 +42,12 @@ IfCmd "if command"
 ElseCmd "else command"
   = CmdOpen "else" param:CmdParam? CmdClose {
     return {
-      cmdType: "else",
+      cmdType: "Else",
       param
     };
   }
 
 EndIfCmd "end if command"
   = CmdOpen "endIf" CmdClose {
-    return { cmdType: "endIf" };
+    return { cmdType: "EndIf" };
   }

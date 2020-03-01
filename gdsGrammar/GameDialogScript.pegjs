@@ -1,19 +1,24 @@
 GameDialogScript
-  = Node*
+  = nodes:Node* {
+    return {
+      type: "Script",
+      body: nodes
+    };
+  }
 
 Node
   = Dialog / CmdNode / JSExpression
 
 Dialog
   = (! (ExpOpen / CmdOpen) .)+ {
-    const trimmedText = text().trim();
+    const trimmedText = text();
 
     if (trimmedText === "") {
-      return null;
+      return;
     }
 
     return {
-      type: "dialog",
+      type: "Dialog",
       text: trimmedText
     };
   }

@@ -4,7 +4,7 @@ EachCmdBlock "each command block"
   = eachCmd:EachCmd block:EachNode* EndEachCmd {
 
     return {
-      cmdType: "eachBlock",
+      cmdType: "EachBlock",
       param: eachCmd.param,
       block
     };
@@ -16,12 +16,12 @@ EachNode "each node"
 EachCmd "each command"
   = CmdOpen "each" param:CmdParam CmdClose {
     return {
-      cmdType: "each",
+      cmdType: "Each",
       param
     };
   }
 
 EndEachCmd "end each command"
   = CmdOpen "endEach" CmdClose {
-    return { cmdType: "endEach" };
+    return { cmdType: "EndEach" };
   }

@@ -8,6 +8,7 @@ require.extensions['.pegjs'] = function (module, filename) {
 const gameDialogScript = [
 	require("./GameDialogScript.pegjs"),
 	require("./Command.pegjs"),
+	require("./PauseCommand.pegjs"),
 	require("./IfCommand.pegjs"),
 	require("./EachCommand.pegjs"),
 	require("./JSExpression.pegjs"),
