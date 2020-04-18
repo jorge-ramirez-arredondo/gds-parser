@@ -6,7 +6,8 @@
   "main": "dist/gds-parser.js",
   "scripts": {
     "build": "node ./scripts/build.js",
-    "dev:grammar": "nodemon -e js,pegjs,gds -w scripts/devGrammar -w gdsGrammar ./scripts/devGrammar/index.js"
+    "dev:grammar": "nodemon -e js,pegjs,gds -w scripts/devGrammar -w gdsGrammar ./scripts/devGrammar/index.js",
+    "printGrammar": "node ./scripts/printGrammar"
   },
   "keywords": [
     "peg",
