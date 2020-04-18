@@ -1,5 +1,5 @@
 {
-  "name": "@gds/parser",
+  "name": "@jorge-ramirez-arredondo/gds-parser",
   "version": "1.2.0",
   "description": "A grammar and js parser for a game dialog scripting language.",
   "repository": "git://github.com/jorge-ramirez-arredondo/gds-parser",
